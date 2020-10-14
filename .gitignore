@@ -3,3 +3,6 @@
 .vs
 /BigMathLib/Debug
 /BigMathLib/Realse
+/BigMathApp/Debug
+/BigMathApp/Realse
+/lib/*

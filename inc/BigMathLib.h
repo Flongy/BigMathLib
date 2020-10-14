@@ -11,5 +11,6 @@
 #include "BSum.h"
 #include "Compare.h"
 #include "IOInterface.h"
+#include "BGcd.h"
 
 #endif
