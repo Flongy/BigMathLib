@@ -2,5 +2,6 @@
 #define TESTBIGMATHLIB_H
 
 void TestGcd();
+void TestGcdExtended();
 
 #endif

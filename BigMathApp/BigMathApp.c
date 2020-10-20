@@ -14,4 +14,5 @@ int main()
 
 void test() {
     TestGcd();
+    TestGcdExtended();
 }
