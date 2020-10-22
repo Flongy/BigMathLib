@@ -21,9 +21,15 @@
     <ClCompile Include="TestBigMathLib.c">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
+    <ClCompile Include="CheckBigMathLibResult.c">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TestBigMathLib.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="CheckBigMathLibResult.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
