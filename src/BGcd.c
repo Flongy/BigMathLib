@@ -11,27 +11,61 @@
 /************************************************************/
 
 /************************************************************/
-/*	 Функция сравения и замены чисел						*/
+/*	Функция нахождения НОД двух чисел (a, b) рекурсивно		*/
 /*															*/
-/*	 static void CompareAndSwitch(IN OUT p_element a,		*/
-/*								  IN OUT p_element b);		*/
+/*	void Gcd(IN p_element a,								*/
+/*			 IN p_element b,								*/
+/*			 OUT p_element result);							*/
 /*															*/
 /*	Входные параметры:										*/
 /*															*/
-/*	p_element a		- первое число							*/
+/*	p_element a 	- первое число							*/
 /*	p_element b		- второе число							*/
 /*															*/
-/*	Заметки:												*/
+/*	Выходные параметры:										*/
 /*															*/
-/*	- Если b больше a, то a будет помещено					*/
-/*	  в b, а b будет помещено в a							*/
-/*	- Если a больше b, то никаких изменений не будет		*/
-/*	  произведено											*/
+/*	p_element result	- массив, в который будет 			*/
+/*						  помещен НОД						*/
 /*															*/
 /************************************************************/
 
-static void CompareAndSwitch(IN OUT p_element a,
-							 IN OUT p_element b);
+static void GcdR(IN p_element a,
+		  		 IN p_element b,
+				 OUT p_element result);
+
+/************************************************************/
+/*	Функция рекурсивного выполнения расширенного алогритма	*/
+/*	Евклида													*/
+/*															*/
+/*	решение уравнения: a * x + b * y = (a, b)				*/
+/*															*/
+/*	void GcdExtendedR(IN p_element a,						*/
+/*					  IN p_element b,						*/
+/*					  OUT p_element result,					*/
+/*					  OUT p_element x,						*/
+/*					  OUT p_element y);						*/
+/*															*/
+/*	Входные параметры:										*/
+/*															*/
+/*	p_element a 		- первое число						*/
+/*	p_element b			- второе число						*/
+/*															*/
+/*	Выходные параметры:										*/
+/*															*/
+/*	p_element result	- массив, в который будет помещен	*/
+/*						  НОД								*/
+/*	p_element x			- массив, в который будет помещено 	*/
+/*						  найденное число x					*/
+/*	p_element y			- массив, в который будет помещено	*/
+/*						  найденное число y					*/
+/*															*/
+/************************************************************/
+
+static void GcdExtendedR(IN p_element a,
+						 IN p_element b,
+						 OUT p_element result,
+						 OUT p_element x,
+						 OUT p_element y);
 
 /************************************************************/
 /*	Конец блока static функций								*/
@@ -41,13 +75,56 @@ void Gcd(IN p_element a,
 		 IN p_element b,
 		 OUT p_element result)  {
 	
-	CompareAndSwitch(a, b);
+	element _a[NUM_SIZE];
+	element _b[NUM_SIZE];
 
+	memset(_a, 0, NUM_SIZE * sizeof(element));
+	memset(_b, 0, NUM_SIZE * sizeof(element));
+
+	memcpy(_a, a, NUM_SIZE * sizeof(element));
+	memcpy(_b, b, NUM_SIZE * sizeof(element));
+
+	CompareAndSwap(_a, _b);
+
+	GcdR(_a, _b, result);
+}
+
+void GcdExtended(IN p_element a,
+			     IN p_element b,
+				 OUT p_element result,
+				 OUT p_element x,
+				 OUT p_element y) {
+
+	element _a[NUM_SIZE];
+	element _b[NUM_SIZE];
+
+	memset(_a, 0, NUM_SIZE * sizeof(element));
+	memset(_b, 0, NUM_SIZE * sizeof(element));
+
+	memcpy(_a, a, NUM_SIZE * sizeof(element));
+	memcpy(_b, b, NUM_SIZE * sizeof(element));
+
+	BOOL swapResult = CompareAndSwap(_a, _b);
+
+	GcdExtendedR(_a, _b, result, x, y);
+
+	if (swapResult == True) {
+		Swap(x, y);
+	}
+}
+
+/************************************************************/
+/*	Начало блока static функций								*/
+/************************************************************/
+
+static void GcdR(IN p_element a,
+	IN p_element b,
+	OUT p_element result) {
 	element r[NUM_SIZE];
 	element q[NUM_SIZE];
 
 	unsigned int zero = 0;
-	
+
 	int i = 0;
 
 	Div(a, b, r, q);
@@ -58,16 +135,14 @@ void Gcd(IN p_element a,
 		return;
 	}
 
-	Gcd(b, q, result);
+	GcdR(b, q, result);
 }
 
-void GcdExtended(IN p_element a,
-			     IN p_element b,
-				 OUT p_element result,
-				 OUT p_element x,
-				 OUT p_element y) {
-
-	CompareAndSwitch(a, b);
+static void GcdExtendedR(IN p_element a,
+						 IN p_element b,
+						 OUT p_element result,
+						 OUT p_element x,
+ 						 OUT p_element y) {
 
 	element r[NUM_SIZE];
 	element q[NUM_SIZE];
@@ -90,30 +165,14 @@ void GcdExtended(IN p_element a,
 		memcpy(result, b, NUM_SIZE * sizeof(element));
 		return;
 	}
-	
-	GcdExtended(b, q, result, x, y);
+
+	GcdExtendedR(b, q, result, x, y);
 
 	memcpy(newX, y, NUM_SIZE * sizeof(element));
 	Mul(y, r, tmp);
 	Sub(x, tmp, y);
 	memcpy(x, newX, NUM_SIZE * sizeof(element));
 	return;
-}
-
-/************************************************************/
-/*	Начало блока static функций								*/
-/************************************************************/
-
-static void CompareAndSwitch(IN OUT p_element a,
-							 IN OUT p_element b) {
-	int result = Compare(a, b, NUM_SIZE, NUM_SIZE);
-
-	if (result == -1) {
-		int i = 0;
-		for (i = 0; i < NUM_SIZE; i++) {
-			a[i] ^= b[i] ^= a[i] ^= b[i];
-		}
-	}
 }
 
 /************************************************************/
