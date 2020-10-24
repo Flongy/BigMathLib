@@ -29,3 +29,22 @@
 
 	return result;
 }
+
+BOOL CompareAndSwap(IN OUT p_element a,
+			        IN OUT p_element b) {
+	int result = Compare(a, b, NUM_SIZE, NUM_SIZE);
+
+	if (result == -1) {
+		Swap(a, b);
+		return True;
+	}
+	return False;
+}
+
+void Swap(IN OUT p_element a,
+		  IN OUT p_element b) {
+	int i = 0;
+	for (i = 0; i < NUM_SIZE; i++) {
+		a[i] ^= b[i] ^= a[i] ^= b[i];
+	}
+}
