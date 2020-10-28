@@ -15,15 +15,15 @@ void Bsqrt(IN p_element value, OUT p_element output)
 		dividend[NUM_SIZE],
 		intermediateVar[NUM_SIZE * 2];
 
-	memset(left, 0, NUM_SIZE * sizeof(element));
-	memset(right, 0, NUM_SIZE * sizeof(element));
+	ZEROING(left);
+	ZEROING(right);
 
-	memcpy(right, value, NUM_SIZE * sizeof(element));
+	COPY(value, right);
 
 	while (True)
 	{
-		memset(range, 0, NUM_SIZE * sizeof(element));
-		memset(dividend, 0, NUM_SIZE * sizeof(element));
+		ZEROING(range);
+		ZEROING(dividend);
 		memset(intermediateVar, 0, NUM_SIZE * 2 * sizeof(element));
 
 		Sum(right, left, range);
@@ -40,21 +40,21 @@ void Bsqrt(IN p_element value, OUT p_element output)
 
 		if (compare_result == 1)
 		{
-			memset(left, 0, NUM_SIZE * sizeof(element));
-			memcpy(left, dividend, NUM_SIZE * sizeof(element));
+			ZEROING(left);
+			COPY(dividend, left);
 		}
 		else if (compare_result == -1)
 		{
-			memset(right, 0, NUM_SIZE * sizeof(element));
-			memcpy(right, dividend, NUM_SIZE * sizeof(element));
+			ZEROING(right);
+			COPY(dividend, right);
 		}
 		else if (compare_result == 0)
 		{
 			break;
 		}
 	}
-	memset(output, 0, NUM_SIZE * sizeof(element));
-	memcpy(output, dividend, NUM_SIZE * sizeof(element));
+	ZEROING(output);
+	COPY(dividend, output);
 }
 
 

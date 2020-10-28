@@ -21,8 +21,8 @@ void Decrement(IN OUT p_element valueL)
 {
 	element one[NUM_SIZE];
 	element _out[NUM_SIZE];
-	memset(one, 0, NUM_SIZE * sizeof(element));
+	ZEROING(one);
 	one[0] = 1;
 	Sub(valueL, one, _out);
-	memcpy(valueL, _out, NUM_SIZE * sizeof(element));
+	COPY(_out, valueL);
 }
