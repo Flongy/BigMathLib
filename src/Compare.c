@@ -6,6 +6,13 @@
 			IN unsigned int size1,
 			IN unsigned int size2)
 {
+	 BOOL isFirstNegative = (first[size1 - 1] & SIGN_BIT_MASK) >> SIGN_BIT_SHIFT;
+	 BOOL isSecondNegative = (second[size2 - 1] & SIGN_BIT_MASK) >> SIGN_BIT_SHIFT;
+
+	 if ((isFirstNegative ^ isSecondNegative) == 1) {
+		 return isFirstNegative * (-1) + isSecondNegative;
+	 }
+
 	unsigned int size = size1 > size2 ? size1 : size2;
 
 	int i = 0, result = 0;
