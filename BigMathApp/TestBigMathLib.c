@@ -2,10 +2,7 @@
 #include "BigMathLib.h"
 #include "TestBigMathLib.h"
 #include "CheckBigMathLibResult.h"
-
-#define TEST_GCD_MESSAGE "Тестирование функции поиска НОД\n"
-#define TEST_GCD_EXTENDED_MESSAGE "Тестирование расширенной функции поиска НОД\n"
-#define CHECK_GCD_EXTENDED_RESULT_MESSAGE "Проверка результата работы расширенной функции поиска НОД (решение уравнения a * x + b * y = (a, b)).\n"
+#include "Messages.h"
 
 void TestGcd() {
 
@@ -59,6 +56,33 @@ void TestGcdExtended() {
 	printf(CHECK_GCD_EXTENDED_RESULT_MESSAGE);
 
 	BOOL checkResult = checkGcdExtendedResult(a, b, x, y, result);
+	proccessCheckResult(checkResult);
+
+	return;
+}
+
+void TestInverse() {
+
+	printf(TEST_INVERSE_MESSAGE);
+	
+	element a[NUM_SIZE] = { 0x4 };
+	element m[NUM_SIZE] = { 0x9 };
+	element result[NUM_SIZE];
+
+	printf("a: ");
+	printConsoleBE(a);
+
+	printf("m: ");
+	printConsoleBE(m);
+
+	inverse(a, m, result);
+
+	printf("result: ");
+	printConsoleBE(result);
+
+	printf(CHECK_INVERSE_RESULT_MESSAGE);
+
+	BOOL checkResult = checkInverseResult(a, m, result);
 	proccessCheckResult(checkResult);
 
 	return;

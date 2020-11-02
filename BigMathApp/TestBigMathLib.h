@@ -3,5 +3,6 @@
 
 void TestGcd();
 void TestGcdExtended();
+void TestInverse();
 
 #endif

@@ -15,6 +15,9 @@
 #define BYTE_LEN 8
 #define NUM_SIZE 2
 
+#define ZERO_SIZE 1
+static unsigned int zero = 0;
+
 typedef unsigned int element;
 typedef element *p_element;
 
@@ -33,5 +36,8 @@ typedef unsigned char BOOL;
 #endif
 
 #define LIB(type) REF BIGMATHLIB_API type
+
+#define ZEROING(number) memset(number, 0, NUM_SIZE * sizeof(element))
+#define COPY(from, to) memcpy(to, from, NUM_SIZE * sizeof(element))
 
 #endif BNUMBER_H

@@ -172,6 +172,7 @@
     <ClInclude Include="..\inc\BSub.h" />
     <ClInclude Include="..\inc\BSum.h" />
     <ClInclude Include="..\inc\Compare.h" />
+    <ClInclude Include="..\inc\Inverse.h" />
     <ClInclude Include="..\inc\IOInterface.h" />
     <ClInclude Include="framework.h" />
   </ItemGroup>
@@ -185,6 +186,7 @@
     <ClCompile Include="..\src\BSub.c" />
     <ClCompile Include="..\src\BSum.c" />
     <ClCompile Include="..\src\Compare.c" />
+    <ClCompile Include="..\src\Inverse.c" />
     <ClCompile Include="..\src\IOInterface.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -148,6 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CheckBigMathLibResult.h" />
+    <ClInclude Include="Messages.h" />
     <ClInclude Include="TestBigMathLib.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

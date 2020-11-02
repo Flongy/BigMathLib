@@ -1,5 +1,6 @@
 #include "BigMathLib.h"
 #include "CheckBigMathLibResult.h"
+#include "Messages.h"
 
 BOOL checkGcdExtendedResult(IN p_element a,
 							IN p_element b,
@@ -10,9 +11,9 @@ BOOL checkGcdExtendedResult(IN p_element a,
 	element tmp_2[NUM_SIZE*2];
 	element tmp_3[NUM_SIZE];
 
-	memset(tmp_1, 0, NUM_SIZE * sizeof(element));
-	memset(tmp_2, 0, NUM_SIZE * sizeof(element));
-	memset(tmp_3, 0, NUM_SIZE * sizeof(element));
+	memset(tmp_1, 0, NUM_SIZE * 2 * sizeof(element));
+	memset(tmp_2, 0, NUM_SIZE * 2 * sizeof(element));
+	ZEROING(tmp_3);
 
 	Mul(a, x, tmp_1);
 	Mul(b, y, tmp_2);
@@ -21,6 +22,19 @@ BOOL checkGcdExtendedResult(IN p_element a,
 	unsigned int result = Compare(tmp_3, d, NUM_SIZE, NUM_SIZE);
 
 	if (result == 0) return True;
+	return False;
+}
+
+BOOL checkInverseResult(IN p_element a,
+						IN p_element m,
+						IN p_element result) {
+	element tmp[NUM_SIZE];
+
+	ZEROING(tmp);
+
+	inverse(result, m, tmp);
+
+	if (Compare(tmp, a, NUM_SIZE, NUM_SIZE) == 0) return True;
 	return False;
 }
 

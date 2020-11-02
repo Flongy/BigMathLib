@@ -12,5 +12,6 @@
 #include "Compare.h"
 #include "IOInterface.h"
 #include "BGcd.h"
+#include "Inverse.h"
 
 #endif

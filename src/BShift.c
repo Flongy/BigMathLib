@@ -10,7 +10,7 @@ void ShiftLeft(IN p_element data,
 	int i = 0, r1 = shift / (sizeof(element) * BYTE_LEN), r2 = shift % (sizeof(element) * BYTE_LEN);
 	long long s = 0;
 
-	memset(output, 0, (sizeof(element) * (NUM_SIZE)));
+	ZEROING(output);
 
 	int limit = NUM_SIZE;
 
@@ -33,7 +33,7 @@ void ShiftRight(IN p_element data,
 	int i = 0, r1 = shift / (sizeof(element) * BYTE_LEN), r2 = shift % (sizeof(element) * BYTE_LEN);
 	long long s = 0;
 
-	memset(output, 0, (sizeof(element) * NUM_SIZE));
+	ZEROING(output);
 
 	for (i = NUM_SIZE - 1; i >= r1; i--)
 	{

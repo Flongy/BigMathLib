@@ -78,11 +78,11 @@ void Gcd(IN p_element a,
 	element _a[NUM_SIZE];
 	element _b[NUM_SIZE];
 
-	memset(_a, 0, NUM_SIZE * sizeof(element));
-	memset(_b, 0, NUM_SIZE * sizeof(element));
+	ZEROING(_a);
+	ZEROING(_b);
 
-	memcpy(_a, a, NUM_SIZE * sizeof(element));
-	memcpy(_b, b, NUM_SIZE * sizeof(element));
+	COPY(a, _a);
+	COPY(b, _b);
 
 	CompareAndSwap(_a, _b);
 
@@ -98,11 +98,11 @@ void GcdExtended(IN p_element a,
 	element _a[NUM_SIZE];
 	element _b[NUM_SIZE];
 
-	memset(_a, 0, NUM_SIZE * sizeof(element));
-	memset(_b, 0, NUM_SIZE * sizeof(element));
+	ZEROING(_a);
+	ZEROING(_b);
 
-	memcpy(_a, a, NUM_SIZE * sizeof(element));
-	memcpy(_b, b, NUM_SIZE * sizeof(element));
+	COPY(a, _a);
+	COPY(b, _b);
 
 	BOOL swapResult = CompareAndSwap(_a, _b);
 
@@ -123,15 +123,13 @@ static void GcdR(IN p_element a,
 	element r[NUM_SIZE];
 	element q[NUM_SIZE];
 
-	unsigned int zero = 0;
-
 	int i = 0;
 
 	Div(a, b, r, q);
 
-	if (Compare(q, &zero, NUM_SIZE, 1) == 0) {
-		memset(result, 0, NUM_SIZE * sizeof(element));
-		memcpy(result, b, NUM_SIZE * sizeof(element));
+	if (Compare(q, &zero, NUM_SIZE, ZERO_SIZE) == 0) {
+		ZEROING(result);
+		COPY(b, result);
 		return;
 	}
 
@@ -149,29 +147,27 @@ static void GcdExtendedR(IN p_element a,
 	element tmp[NUM_SIZE * 2];
 	element newX[NUM_SIZE];
 
-	unsigned int zero = 0;
-
-	memset(tmp, 0, NUM_SIZE * sizeof(element));
-	memset(newX, 0, NUM_SIZE * sizeof(element));
+	memset(tmp, 0, NUM_SIZE * 2 * sizeof(element));
+	ZEROING(newX);
 
 	Div(a, b, r, q);
 
-	if (Compare(q, &zero, NUM_SIZE, 1) == 0) {
-		memset(result, 0, NUM_SIZE * sizeof(element));
-		memset(x, 0, NUM_SIZE * sizeof(element));
-		memset(y, 0, NUM_SIZE * sizeof(element));
+	if (Compare(q, &zero, NUM_SIZE, ZERO_SIZE) == 0) {
+		ZEROING(result);
+		ZEROING(x);
+		ZEROING(y);
 		x[0] = 0;
 		y[0] = 1;
-		memcpy(result, b, NUM_SIZE * sizeof(element));
+		COPY(b, result);
 		return;
 	}
 
 	GcdExtendedR(b, q, result, x, y);
 
-	memcpy(newX, y, NUM_SIZE * sizeof(element));
+	COPY(y, newX);
 	Mul(y, r, tmp);
 	Sub(x, tmp, y);
-	memcpy(x, newX, NUM_SIZE * sizeof(element));
+	COPY(newX, x);
 	return;
 }
 
