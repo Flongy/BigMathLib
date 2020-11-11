@@ -29,6 +29,13 @@ void inverse(IN p_element a,
 
     GcdExtended(_a, m, result, x, y);
 
+    element one = 1;
+
+    if (Compare(result, &one, NUM_SIZE, 1) != 0) {
+        ZEROING(result);
+        return;
+    }
+    
     if (Compare(x, &zero, NUM_SIZE, ZERO_SIZE) == -1) {
         ZEROING(result);
         Sum(m, x, result);
