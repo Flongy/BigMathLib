@@ -99,6 +99,7 @@
       <BrowseInformation>true</BrowseInformation>
       <ExpandAttributedSource>true</ExpandAttributedSource>
       <ShowIncludes>true</ShowIncludes>
+      <AdditionalOptions>/source-charset:utf-8 /execution-charset:utf-8 </AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

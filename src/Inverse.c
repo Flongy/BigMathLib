@@ -6,34 +6,34 @@
 #include "Compare.h"
 
 void inverse(IN p_element a,
-			 IN p_element m,
-			 OUT p_element result) {
+             IN p_element m,
+             OUT p_element result) {
 
-	element _a[NUM_SIZE];
-	element x[NUM_SIZE];
-	element y[NUM_SIZE];
+    element _a[NUM_SIZE];
+    element x[NUM_SIZE];
+    element y[NUM_SIZE];
 
-	ZEROING(_a);
-	ZEROING(x);
-	ZEROING(y);
+    ZEROING(_a);
+    ZEROING(x);
+    ZEROING(y);
 
-	COPY(a, _a);
+    COPY(a, _a);
 
-	if (Compare(a, m, NUM_SIZE, NUM_SIZE) == 1) {
-		element r[NUM_SIZE];
-		
-		ZEROING(r);
+    if (Compare(a, m, NUM_SIZE, NUM_SIZE) == 1) {
+        element r[NUM_SIZE];
 
-		Div(a, m, r, _a);
-	}
+        ZEROING(r);
 
-	GcdExtended(_a, m, result, x, y);
+        Div(a, m, r, _a);
+    }
 
-	if (Compare(x, &zero, NUM_SIZE, ZERO_SIZE) == -1) {
-		ZEROING(result);
-		Sum(m, x, result);
-	} else {
-		ZEROING(result);
-		COPY(x, result);
-	}
+    GcdExtended(_a, m, result, x, y);
+
+    if (Compare(x, &zero, NUM_SIZE, ZERO_SIZE) == -1) {
+        ZEROING(result);
+        Sum(m, x, result);
+    } else {
+        ZEROING(result);
+        COPY(x, result);
+    }
 }
