@@ -2,8 +2,8 @@
 #include "BMul.h"
 
 void Mul(IN p_element a, 
-		 IN p_element b, 
-		 OUT p_element output)
+         IN p_element b, 
+         OUT p_element output)
 {
     int n = NUM_SIZE;
     unsigned long long d;

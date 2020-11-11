@@ -1,4 +1,4 @@
-﻿#ifndef BIGMATHLIB_H
+#ifndef BIGMATHLIB_H
 #define BIGMATHLIB_H
 
 #include "BNumber.h"

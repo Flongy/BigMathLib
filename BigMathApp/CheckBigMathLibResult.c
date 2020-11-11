@@ -3,46 +3,46 @@
 #include "Messages.h"
 
 BOOL checkGcdExtendedResult(IN p_element a,
-							IN p_element b,
-							IN p_element x,
-							IN p_element y,
-							IN p_element d) {
-	element tmp_1[NUM_SIZE*2];
-	element tmp_2[NUM_SIZE*2];
-	element tmp_3[NUM_SIZE];
+                            IN p_element b,
+                            IN p_element x,
+                            IN p_element y,
+                            IN p_element d) {
+    element tmp_1[NUM_SIZE*2];
+    element tmp_2[NUM_SIZE*2];
+    element tmp_3[NUM_SIZE];
 
-	memset(tmp_1, 0, NUM_SIZE * 2 * sizeof(element));
-	memset(tmp_2, 0, NUM_SIZE * 2 * sizeof(element));
-	ZEROING(tmp_3);
+    memset(tmp_1, 0, NUM_SIZE * 2 * sizeof(element));
+    memset(tmp_2, 0, NUM_SIZE * 2 * sizeof(element));
+    ZEROING(tmp_3);
 
-	Mul(a, x, tmp_1);
-	Mul(b, y, tmp_2);
-	Sum(tmp_1, tmp_2, tmp_3);
+    Mul(a, x, tmp_1);
+    Mul(b, y, tmp_2);
+    Sum(tmp_1, tmp_2, tmp_3);
 
-	unsigned int result = Compare(tmp_3, d, NUM_SIZE, NUM_SIZE);
+    unsigned int result = Compare(tmp_3, d, NUM_SIZE, NUM_SIZE);
 
-	if (result == 0) return True;
-	return False;
+    if (result == 0) return True;
+    return False;
 }
 
 BOOL checkInverseResult(IN p_element a,
-						IN p_element m,
-						IN p_element result) {
-	element tmp[NUM_SIZE];
+                        IN p_element m,
+                        IN p_element result) {
+    element tmp[NUM_SIZE];
 
-	ZEROING(tmp);
+    ZEROING(tmp);
 
-	inverse(result, m, tmp);
+    inverse(result, m, tmp);
 
-	if (Compare(tmp, a, NUM_SIZE, NUM_SIZE) == 0) return True;
-	return False;
+    if (Compare(tmp, a, NUM_SIZE, NUM_SIZE) == 0) return True;
+    return False;
 }
 
 void proccessCheckResult(IN BOOL checkResult) {
-	if (checkResult == True) {
-		printf(CHECK_PASSED);
-	}
-	else {
-		printf(CHECK_NOT_PASSED);
-	}
+    if (checkResult == True) {
+        printf(CHECK_PASSED);
+    }
+    else {
+        printf(CHECK_NOT_PASSED);
+    }
 }
