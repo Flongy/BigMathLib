@@ -4,9 +4,9 @@
 /************************************************************/
 /*  Функция нахождения числа, обратного числу а по модулю m */
 /*                                                          */
-/*  void Gcd(IN p_element a,                                */
-/*           IN p_element m,                                */
-/*           OUT p_element result);                         */
+/*  void inverse(IN p_element a,                            */
+/*               IN p_element m,                            */
+/*               OUT p_element result);                     */
 /*                                                          */
 /*  Входные параметры:                                      */
 /*                                                          */

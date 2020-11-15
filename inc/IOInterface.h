@@ -1,10 +1,10 @@
-#ifndef IOINTERFACE
-#define IOINTERFACE
+#ifndef IOINTERFACE_H
+#define IOINTERFACE_H
 
 /************************************************************************************/
 /*  Функция для чтения числа из файла                                               */
 /*                                                                                  */
-/*  int sfile(IN p_element numptr);                                                 */
+/*  int scanFile(IN p_element numptr);                                              */
 /*                                                                                  */
 /*  Выходные параметры:                                                             */
 /*                                                                                  */
@@ -22,12 +22,12 @@
 /*                                                                                  */
 /************************************************************************************/
 
-LIB(int) sfile(OUT p_element numptr);
+LIB(int) scanFile(OUT p_element numptr);
 
 /************************************************************************************/
 /*  Функция для записи числа в файл                                                 */
 /*                                                                                  */
-/*  int pfile(IN p_element numptr);                                                 */
+/*  int printFile(IN p_element numptr);                                             */
 /*                                                                                  */
 /*  Входные параметры:                                                              */
 /*                                                                                  */
@@ -45,12 +45,12 @@ LIB(int) sfile(OUT p_element numptr);
 /*                                                                                  */
 /************************************************************************************/
 
-LIB(int) pfile(IN p_element numptr);
+LIB(int) printFile(IN p_element numptr);
 
 /************************************************************************************/
 /*  Функция для вывода числа в консоль в формате Little Endian                      */
 /*                                                                                  */
-/*  void cprintle(IN p_element numptr);                                             */
+/*  void ClPrintLE(IN p_element numptr);                                            */
 /*                                                                                  */
 /*  Входные параметры:                                                              */
 /*                                                                                  */
@@ -58,12 +58,12 @@ LIB(int) pfile(IN p_element numptr);
 /*                                                                                  */
 /************************************************************************************/
 
-LIB(void) cprintle(IN p_element numptr);
+LIB(void) ClPrintLE(IN p_element numptr);
 
 /************************************************************************************/
 /*  Функция для вывода числа в консоль в формате Big Endian                         */
 /*                                                                                  */
-/*  void cprintbe(IN p_element numptr);                                             */
+/*  void ClPrintBE(IN p_element numptr);                                            */
 /*                                                                                  */
 /*  Входные параметры:                                                              */
 /*                                                                                  */
@@ -71,7 +71,7 @@ LIB(void) cprintle(IN p_element numptr);
 /*                                                                                  */
 /************************************************************************************/
 
-LIB(void) cprintbe(IN p_element numptr);
+LIB(void) ClPrintBE(IN p_element numptr);
 
 
 #endif

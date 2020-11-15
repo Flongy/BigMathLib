@@ -2,16 +2,16 @@
 #define BIGMATHLIB_H
 
 #include "BNumber.h"
-#include "BDiv.h"
-#include "BMul.h"
-#include "BNumIO.h"
-#include "BShift.h"
-#include "BSqrt.h"
-#include "BSub.h"
-#include "BSum.h"
+#include "Div.h"
+#include "Mul.h"
+#include "NumIO.h"
+#include "Shift.h"
+#include "Sqrt.h"
+#include "Sub.h"
+#include "Add.h"
 #include "Compare.h"
 #include "IOInterface.h"
-#include "BGcd.h"
+#include "Gcd.h"
 #include "Inverse.h"
 
 #endif

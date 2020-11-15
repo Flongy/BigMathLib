@@ -1,10 +1,10 @@
-#ifndef BGCD_H
-#define BGCD_H
+#ifndef GCD_H
+#define GCD_H
 
 /************************************************************/
 /*  Функция нахождения НОД двух чисел (a, b)                */
 /*                                                          */
-/*  void Gcd(IN p_element a,                                */
+/*  void gcd(IN p_element a,                                */
 /*           IN p_element b,                                */
 /*           OUT p_element result);                         */
 /*                                                          */
@@ -20,7 +20,7 @@
 /*                                                          */
 /************************************************************/
 
-LIB(void) Gcd(IN p_element a,
+LIB(void) gcd(IN p_element a,
               IN p_element b,
               OUT p_element result);
 
@@ -30,7 +30,7 @@ LIB(void) Gcd(IN p_element a,
 /*                                                          */
 /*  решение уравнения: a * x + b * y = (a, b)               */
 /*                                                          */
-/*  void GcdExtended(IN p_element a,                        */
+/*  void gcdExtended(IN p_element a,                        */
 /*                   IN p_element b,                        */
 /*                   OUT p_element result,                  */
 /*                   OUT p_element x,                       */
@@ -52,7 +52,7 @@ LIB(void) Gcd(IN p_element a,
 /*                                                          */
 /************************************************************/
 
-LIB(void) GcdExtended(IN p_element a,
+LIB(void) gcdExtended(IN p_element a,
                       IN p_element b,
                       OUT p_element result,
                       OUT p_element x,

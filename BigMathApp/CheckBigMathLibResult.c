@@ -15,14 +15,17 @@ BOOL checkGcdExtendedResult(IN p_element a,
     memset(tmp_2, 0, NUM_SIZE * 2 * sizeof(element));
     ZEROING(tmp_3);
 
-    Mul(a, x, tmp_1);
-    Mul(b, y, tmp_2);
-    Sum(tmp_1, tmp_2, tmp_3);
+    multiplication(a, x, tmp_1);
+    multiplication(b, y, tmp_2);
+    addition(tmp_1, tmp_2, tmp_3);
 
-    unsigned int result = Compare(tmp_3, d, NUM_SIZE, NUM_SIZE);
+    unsigned int result = compare(tmp_3, d, NUM_SIZE, NUM_SIZE);
 
-    if (result == 0) return True;
-    return False;
+    if (result == 0) {
+        return True;
+    } else {
+        return False;
+    }
 }
 
 BOOL checkInverseResult(IN p_element a,
@@ -32,17 +35,23 @@ BOOL checkInverseResult(IN p_element a,
 
     ZEROING(tmp);
 
+    if (compare(result, &zero, NUM_SIZE, ZERO_SIZE) == 0) {
+        return True;
+    }
+
     inverse(result, m, tmp);
 
-    if (Compare(tmp, a, NUM_SIZE, NUM_SIZE) == 0) return True;
-    return False;
+    if (compare(tmp, a, NUM_SIZE, NUM_SIZE) == 0) {
+        return True;
+    } else {
+        return False;
+    }
 }
 
 void proccessCheckResult(IN BOOL checkResult) {
     if (checkResult == True) {
         printf(CHECK_PASSED);
-    }
-    else {
+    } else {
         printf(CHECK_NOT_PASSED);
     }
 }

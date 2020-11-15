@@ -1,10 +1,10 @@
-#ifndef BSHIFT_H
-#define BSHIFT_H
+#ifndef SHIFT_H
+#define SHIFT_H
 
 /************************************************************/
 /*  Функция сдвига числа влево, заданного массивом слов     */
 /*                                                          */
-/*   void ShiftLeft(IN p_element data,                      */
+/*   void shiftLeft(IN p_element data,                      */
 /*                  IN unsigned int shift,                  */
 /*                  OUT p_element output);                  */
 /*                                                          */
@@ -22,14 +22,14 @@
 /*                                                          */
 /************************************************************/
 
-LIB(void) ShiftLeft(IN p_element data,
+LIB(void) shiftLeft(IN p_element data,
                     IN unsigned int shift,
                     OUT p_element output);
 
 /************************************************************/
 /*  Функция сдвига числа вправо, заданного массивом слов    */
 /*                                                          */
-/*  void ShiftRight(IN p_element data,                      */
+/*  void shiftRight(IN p_element data,                      */
 /*                  IN unsigned int shift,                  */
 /*                  OUT p_element output);                  */
 /*                                                          */
@@ -47,7 +47,7 @@ LIB(void) ShiftLeft(IN p_element data,
 /*                                                          */
 /************************************************************/
 
-LIB(void) ShiftRight(IN p_element data,
+LIB(void) shiftRight(IN p_element data,
                      IN unsigned int shift,
                      OUT p_element output);
 
@@ -55,7 +55,7 @@ LIB(void) ShiftRight(IN p_element data,
 /*  Функция производит поиск старшего бита в числе,         */
 /*  заданного массивом слов                                 */
 /*                                                          */
-/*  int HighBit(IN p_element data);                         */
+/*  int highBit(IN p_element data);                         */
 /*                                                          */
 /*  Входные параметры:                                      */
 /*                                                          */
@@ -71,6 +71,6 @@ LIB(void) ShiftRight(IN p_element data,
 /*                                                          */
 /************************************************************/
 
-LIB(int) HighBit(IN p_element data);
+LIB(int) highBit(IN p_element data);
 
 #endif

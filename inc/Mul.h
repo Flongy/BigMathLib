@@ -1,12 +1,12 @@
-#ifndef	BMUL_H
-#define	BMUL_H
+#ifndef	MUL_H
+#define	MUL_H
 
 /************************************************************/
 /*  Функция умножения чисел                                 */
 /*                                                          */
-/*  void Mul(IN p_element a,                                */
-/*          (IN p_element b,                                */
-/*           OUT p_element output);                         */
+/*  void multiplication(IN p_element a,                     */
+/*                      IN p_element b,                     */
+/*                      OUT p_element output);              */
 /*                                                          */
 /*  Входные параметры:                                      */
 /*                                                          */
@@ -20,8 +20,8 @@
 /*                                                          */
 /************************************************************/
 
-LIB(void) Mul(IN p_element a,
-              IN p_element b,
-              OUT p_element output);
+LIB(void) multiplication(IN p_element a,
+                         IN p_element b,
+                         OUT p_element output);
 
 #endif

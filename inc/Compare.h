@@ -7,7 +7,7 @@
 /************************************************************/
 /*  Функция сравнения двух чисел, заданных массивами слов   */
 /*                                                          */
-/*  int Compare(IN p_element valueL,                        */
+/*  int compare(IN p_element valueL,                        */
 /*              IN p_element valueM,                        */
 /*              IN unsigned int sizeL,                      */
 /*              IN unsigned int sizeM);                     */
@@ -27,15 +27,15 @@
 /*                                                          */
 /************************************************************/
 
-LIB(int) Compare(p_element valueL,
-                 p_element valueM,
-                 unsigned int sizeL,
-                 unsigned int sizeM);
+LIB(int) compare(IN p_element valueL,
+                 IN p_element valueM,
+                 IN unsigned int sizeL,
+                 IN unsigned int sizeM);
 
 /************************************************************/
 /*  функция сравения и замены чисел                         */
 /*                                                          */
-/*  BOOL CompareAndSwap(IN OUT p_element a,                 */
+/*  BOOL compareAndSwap(IN OUT p_element a,                 */
 /*                      IN OUT p_element b);                */
 /*                                                          */
 /*  Входные параметры:                                      */
@@ -57,13 +57,13 @@ LIB(int) Compare(p_element valueL,
 /*                                                          */
 /************************************************************/
 
-LIB(BOOL) CompareAndSwap(IN OUT p_element a,
+LIB(BOOL) compareAndSwap(IN OUT p_element a,
                          IN OUT p_element b);
 
 /************************************************************/
 /*  Функция замены чисел                                    */
 /*                                                          */
-/*  void Swap(IN OUT p_element a,                           */
+/*  void swap(IN OUT p_element a,                           */
 /*            IN OUT p_element b);                          */
 /*                                                          */
 /*  Входные параметры:                                      */
@@ -73,7 +73,7 @@ LIB(BOOL) CompareAndSwap(IN OUT p_element a,
 /*                                                          */
 /************************************************************/
 
-LIB(void) Swap(IN OUT p_element a,
+LIB(void) swap(IN OUT p_element a,
                IN OUT p_element b);
 
 #endif

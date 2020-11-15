@@ -1,20 +1,20 @@
-#ifndef BDIV_H
-#define BDIV_H
+#ifndef DIV_H
+#define DIV_H
 
 /************************************************************/
-/*  функция деления двух чисел, заданных массивами слов     */
+/*  Функция деления двух чисел, заданных массивами слов     */
 /*                                                          */
-/*  void Div(IN p_element first,                            */
-/*           IN p_element second,                           */
-/*           OUT p_element number,                          */
-/*           OUT p_element quotient);                       */
+/*  void division(IN p_element first,                       */
+/*                IN p_element second,                      */
+/*                OUT p_element number,                     */
+/*                OUT p_element quotient);                  */
 /*                                                          */
-/*  входные параметры:                                      */
+/*  Входные параметры:                                      */
 /*                                                          */
 /*  p_element first     - делимое                           */
 /*  p_element second    - делитель                          */
 /*                                                          */
-/*  выходные параметры:                                     */
+/*  Выходные параметры:                                     */
 /*                                                          */
 /*  p_element number    - массив, в который будет           */
 /*                        помещено частное                  */
@@ -23,9 +23,9 @@
 /*                                                          */
 /************************************************************/
 
-LIB(void) Div(IN p_element first,
-              IN p_element second,
-              OUT p_element number,
-              OUT p_element quotient);
+LIB(void) division(IN p_element first,
+                   IN p_element second,
+                   OUT p_element number,
+                   OUT p_element quotient);
 
 #endif
