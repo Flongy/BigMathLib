@@ -162,30 +162,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\inc\BDiv.h" />
-    <ClInclude Include="..\inc\BGcd.h" />
+    <ClInclude Include="..\inc\Div.h" />
+    <ClInclude Include="..\inc\Gcd.h" />
     <ClInclude Include="..\inc\BigMathLib.h" />
-    <ClInclude Include="..\inc\BMul.h" />
+    <ClInclude Include="..\inc\Mul.h" />
     <ClInclude Include="..\inc\BNumber.h" />
-    <ClInclude Include="..\inc\BNumIO.h" />
-    <ClInclude Include="..\inc\BShift.h" />
-    <ClInclude Include="..\inc\BSqrt.h" />
-    <ClInclude Include="..\inc\BSub.h" />
-    <ClInclude Include="..\inc\BSum.h" />
+    <ClInclude Include="..\inc\NumIO.h" />
+    <ClInclude Include="..\inc\Shift.h" />
+    <ClInclude Include="..\inc\Sqrt.h" />
+    <ClInclude Include="..\inc\Sub.h" />
+    <ClInclude Include="..\inc\Add.h" />
     <ClInclude Include="..\inc\Compare.h" />
     <ClInclude Include="..\inc\Inverse.h" />
     <ClInclude Include="..\inc\IOInterface.h" />
     <ClInclude Include="framework.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\BDiv.c" />
-    <ClCompile Include="..\src\BGcd.c" />
-    <ClCompile Include="..\src\BMul.c" />
-    <ClCompile Include="..\src\BNumIO.c" />
-    <ClCompile Include="..\src\BShift.c" />
-    <ClCompile Include="..\src\BSqrt.c" />
-    <ClCompile Include="..\src\BSub.c" />
-    <ClCompile Include="..\src\BSum.c" />
+    <ClCompile Include="..\src\Div.c" />
+    <ClCompile Include="..\src\Gcd.c" />
+    <ClCompile Include="..\src\Mul.c" />
+    <ClCompile Include="..\src\NumIO.c" />
+    <ClCompile Include="..\src\Shift.c" />
+    <ClCompile Include="..\src\Sqrt.c" />
+    <ClCompile Include="..\src\Sub.c" />
+    <ClCompile Include="..\src\Add.c" />
     <ClCompile Include="..\src\Compare.c" />
     <ClCompile Include="..\src\Inverse.c" />
     <ClCompile Include="..\src\IOInterface.c" />

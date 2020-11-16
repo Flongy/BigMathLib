@@ -4,7 +4,7 @@
 #include "CheckBigMathLibResult.h"
 #include "Messages.h"
 
-void TestGcd() {
+void testGcd() {
 
     printf(TEST_GCD_MESSAGE);
 
@@ -18,7 +18,7 @@ void TestGcd() {
     printf("b: ");
     printConsoleBE(b);
 
-    Gcd(a, b, result);
+    gcd(a, b, result);
 
     printf("result: ");
     printConsoleBE(result);
@@ -26,7 +26,7 @@ void TestGcd() {
     return;
 }
 
-void TestGcdExtended() {
+void testGcdExtended() {
 
     printf(TEST_GCD_EXTENDED_MESSAGE);
 
@@ -42,7 +42,7 @@ void TestGcdExtended() {
     printf("b: ");
     printConsoleBE(b);
 
-    GcdExtended(a, b, result, x, y);
+    gcdExtended(a, b, result, x, y);
 
     printf("result: ");
     printConsoleBE(result);
@@ -61,12 +61,12 @@ void TestGcdExtended() {
     return;
 }
 
-void TestInverse() {
+void testInverse() {
 
     printf(TEST_INVERSE_MESSAGE);
 
-    element a[NUM_SIZE] = { 0x4 };
-    element m[NUM_SIZE] = { 0x9 };
+    element a[NUM_SIZE] = { 0x12345678 };
+    element m[NUM_SIZE] = { 0x87654323 };
     element result[NUM_SIZE];
 
     printf("a: ");

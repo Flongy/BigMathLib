@@ -1,12 +1,12 @@
-#ifndef BSUM_H
-#define BSUM_H
+#ifndef ADD_H
+#define ADD_H
 
 /************************************************************/
 /*  Функция сложения чисел                                  */
 /*                                                          */
-/*  void Sub(IN p_element valueL,                           */
-/*           IN p_element valueM,                           */
-/*           OUT p_element out);                            */
+/*  void addition(IN p_element valueL,                      */
+/*                IN p_element valueM,                      */
+/*                OUT p_element out);                       */
 /*                                                          */
 /*  Входные параметры:                                      */
 /*                                                          */
@@ -20,14 +20,14 @@
 /*                                                          */
 /************************************************************/
 
-LIB(void) Sum(IN p_element valueL,
-              IN p_element valueM,
-              OUT p_element out);
+LIB(void) addition(IN p_element valueL,
+                   IN p_element valueM,
+                   OUT p_element out);
 
 /************************************************************/
 /*  Функция прибвляет 1 к заданному числу                   */
 /*                                                          */
-/*  void Increment(IN OUT p_element valueL);                */
+/*  void increment(IN OUT p_element valueL);                */
 /*                                                          */
 /*  Входные параметры:                                      */
 /*                                                          */
@@ -40,6 +40,6 @@ LIB(void) Sum(IN p_element valueL,
 /*                                                          */
 /************************************************************/
 
-LIB(void) Increment(IN OUT p_element valueL);
+LIB(void) increment(IN OUT p_element valueL);
 
 #endif

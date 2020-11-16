@@ -1,11 +1,11 @@
-#ifndef BSQRT_H
-#define BSQRT_H
+#ifndef SQRT_H
+#define SQRT_H
 
 /************************************************************/
 /*  Функция извлечения квадратного корня из числа           */
 /*                                                          */
-/*  void Bsqrt(IN p_element value,                          */
-/*             OUT p_element output);                       */
+/*  void squareRoot(IN p_element value,                     */
+/*                  OUT p_element output);                  */
 /*                                                          */
 /*  Входные параметры:                                      */
 /*                                                          */
@@ -20,8 +20,8 @@
 /*                                                          */
 /************************************************************/
 
-LIB(void) Bsqrt(IN p_element value, 
-                OUT p_element output);
+LIB(void) squareRoot(IN p_element value,
+                     OUT p_element output);
 
 /************************************************************/
 /*  Функция проверяет число на наличие точного корня        */
@@ -40,6 +40,6 @@ LIB(void) Bsqrt(IN p_element value,
 /*                                                          */
 /************************************************************/
 
-LIB(BOOL) isSqrt(IN p_element value);
+LIB(BOOL) isSquareRoot(IN p_element value);
 
 #endif

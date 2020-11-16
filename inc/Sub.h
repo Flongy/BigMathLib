@@ -1,12 +1,12 @@
-#ifndef BSUB_H
-#define BSUB_H
+#ifndef SUB_H
+#define SUB_H
 
 /************************************************************/
 /*  Функция вычитания чисел                                 */
 /*                                                          */
-/*  void Sub(IN p_element valueL,                           */
-/*           IN p_element valueM,                           */
-/*           OUT p_element out);                            */
+/*  void subtraction(IN p_element valueL,                   */
+/*                   IN p_element valueM,                   */
+/*                   OUT p_element out);                    */
 /*                                                          */
 /*  Входные параметры:                                      */
 /*                                                          */
@@ -20,14 +20,14 @@
 /*                                                          */
 /************************************************************/
 
-LIB(void) Sub(IN p_element valueL,
-              IN p_element valueM,
-              OUT p_element out);
+LIB(void) subtraction(IN p_element valueL,
+                      IN p_element valueM,
+                      OUT p_element out);
 
 /************************************************************/
 /*  Функция вычитает 1 из заданного числа                   */
 /*                                                          */
-/*  void Decrement(IN OUT p_element valueL);                */
+/*  void decrement(IN OUT p_element valueL);                */
 /*                                                          */
 /*  Входные параметры:                                      */
 /*                                                          */
@@ -40,6 +40,6 @@ LIB(void) Sub(IN p_element valueL,
 /*                                                          */
 /************************************************************/
 
-LIB(void) Decrement(IN OUT p_element valueL);
+LIB(void) decrement(IN OUT p_element valueL);
 
 #endif

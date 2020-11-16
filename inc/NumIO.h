@@ -1,5 +1,5 @@
-#ifndef BNUMIO_H
-#define BNUMIO_H
+#ifndef NUMIO_H
+#define NUMIO_H
 
 /************************************************************************************/
 /*  MAX_PATH_LENGTH - Максимальный размер пути к файлу                              */
@@ -15,7 +15,8 @@
 /************************************************************************************/
 /*  Функция для чтения числа из файла                                               */
 /*                                                                                  */
-/*  int scanFile(IN char* path,OUT p_element numptr);                               */
+/*  int _scanFile(IN char* path,                                                    */
+/*                OUT p_element numptr);                                            */
 /*                                                                                  */
 /*  Входные параметры:                                                              */
 /*                                                                                  */
@@ -31,14 +32,15 @@
 /*   0 - число успешно считано из файла                                             */
 /*                                                                                  */
 /************************************************************************************/
-LIB(int) scanFile(IN char* path,
-                  OUT p_element numptr);
+LIB(int) _scanFile(IN char* path,
+                   OUT p_element numptr);
 
 
 /************************************************************************************/
 /*  Функция для вывода числа в файл                                                 */
 /*                                                                                  */
-/*  int printFile(IN char* path,IN p_element numptr);                               */
+/*  int _printFile(IN char* path,                                                   */
+/*                 IN p_element numptr);                                            */
 /*                                                                                  */
 /*  Входные параметры:                                                              */
 /*                                                                                  */
@@ -56,8 +58,8 @@ LIB(int) scanFile(IN char* path,
 /*                                                                                  */
 /************************************************************************************/
 
-LIB(int) printFile(IN char* path,
-                   IN p_element numptr);
+LIB(int) _printFile(IN char* path,
+                    IN p_element numptr);
 
 
 /************************************************************************************/

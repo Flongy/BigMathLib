@@ -1,8 +1,8 @@
 #ifndef TESTBIGMATHLIB_H
 #define TESTBIGMATHLIB_H
 
-void TestGcd();
-void TestGcdExtended();
-void TestInverse();
+void testGcd();
+void testGcdExtended();
+void testInverse();
 
 #endif
