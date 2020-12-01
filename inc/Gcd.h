@@ -4,9 +4,9 @@
 /************************************************************/
 /*  Функция нахождения НОД двух чисел (a, b)                */
 /*                                                          */
-/*  void gcd(IN p_element a,                                */
-/*           IN p_element b,                                */
-/*           OUT p_element result);                         */
+/*  int gcd(IN p_element a,                                 */
+/*          IN p_element b,                                 */
+/*          OUT p_element result);                          */
 /*                                                          */
 /*  Входные параметры:                                      */
 /*                                                          */
@@ -20,9 +20,9 @@
 /*                                                          */
 /************************************************************/
 
-LIB(void) gcd(IN p_element a,
-              IN p_element b,
-              OUT p_element result);
+LIB(int) gcd(IN p_element a,
+             IN p_element b,
+             OUT p_element result);
 
 /************************************************************/
 /*  Функция нахождения множителей чисел, относительно       */
@@ -30,11 +30,11 @@ LIB(void) gcd(IN p_element a,
 /*                                                          */
 /*  решение уравнения: a * x + b * y = (a, b)               */
 /*                                                          */
-/*  void gcdExtended(IN p_element a,                        */
-/*                   IN p_element b,                        */
-/*                   OUT p_element result,                  */
-/*                   OUT p_element x,                       */
-/*                   OUT p_element y);                      */
+/*  int gcdExtended(IN p_element a,                         */
+/*                  IN p_element b,                         */
+/*                  OUT p_element result,                   */
+/*                  OUT p_element x,                        */
+/*                  OUT p_element y);                       */
 /*                                                          */
 /*  Входные параметры:                                      */
 /*                                                          */
@@ -52,10 +52,10 @@ LIB(void) gcd(IN p_element a,
 /*                                                          */
 /************************************************************/
 
-LIB(void) gcdExtended(IN p_element a,
-                      IN p_element b,
-                      OUT p_element result,
-                      OUT p_element x,
-                      OUT p_element y);
+LIB(int) gcdExtended(IN p_element a,
+                     IN p_element b,
+                     OUT p_element result,
+                     OUT p_element x,
+                     OUT p_element y);
 
 #endif
