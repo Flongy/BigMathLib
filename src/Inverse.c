@@ -4,10 +4,11 @@
 #include "Add.h"
 #include "Div.h"
 #include "Compare.h"
+#include "ResultCode.h"
 
-void inverse(IN p_element a,
-             IN p_element m,
-             OUT p_element result) {
+int inverse(IN p_element a,
+            IN p_element m,
+            OUT p_element result) {
 
     element _a[NUM_SIZE];
     element x[NUM_SIZE];
@@ -32,8 +33,7 @@ void inverse(IN p_element a,
     element one = 1;
 
     if (compare(result, &one, NUM_SIZE, 1) != 0) {
-        ZEROING(result);
-        return;
+        return OPERATION_EXCEPTION;
     }
     
     if (compare(x, &zero, NUM_SIZE, ZERO_SIZE) == -1) {
@@ -43,4 +43,5 @@ void inverse(IN p_element a,
         ZEROING(result);
         COPY(x, result);
     }
+    return SUCCESSFULLY;
 }

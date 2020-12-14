@@ -168,6 +168,7 @@
     <ClInclude Include="..\inc\Mul.h" />
     <ClInclude Include="..\inc\BNumber.h" />
     <ClInclude Include="..\inc\NumIO.h" />
+    <ClInclude Include="..\inc\ResultCode.h" />
     <ClInclude Include="..\inc\Shift.h" />
     <ClInclude Include="..\inc\Sqrt.h" />
     <ClInclude Include="..\inc\Sub.h" />

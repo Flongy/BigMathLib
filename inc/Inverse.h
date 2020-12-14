@@ -4,9 +4,9 @@
 /************************************************************/
 /*  Функция нахождения числа, обратного числу а по модулю m */
 /*                                                          */
-/*  void inverse(IN p_element a,                            */
-/*               IN p_element m,                            */
-/*               OUT p_element result);                     */
+/*  int inverse(IN p_element a,                             */
+/*              IN p_element m,                             */
+/*              OUT p_element result);                      */
 /*                                                          */
 /*  Входные параметры:                                      */
 /*                                                          */
@@ -19,10 +19,16 @@
 /*  p_element result    - массив, в который будет           */
 /*                        помещен обратный элемент          */
 /*                                                          */
+/*  Возвращаемое значение:                                  */
+/*                                                          */
+/*  -2  - обратный элемент не может быть найден, так как    */
+/*        операнды не взаимно простые                       */
+/*   0  - обратный элемент успешно найден                   */
+/*                                                          */
 /************************************************************/
 
-LIB(void) inverse(IN p_element a,
-                  IN p_element m,
-                  OUT p_element result);
+LIB(int) inverse(IN p_element a,
+                 IN p_element m,
+                 OUT p_element result);
 
 #endif

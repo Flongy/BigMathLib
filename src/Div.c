@@ -4,22 +4,23 @@
 #include "Shift.h"
 #include "Sub.h"
 #include "Add.h"
+#include "ResultCode.h"
 
 #include <string.h>
 
-void division(IN p_element first,
-              IN p_element second,
-              OUT p_element number,
-              OUT p_element quotient) {
+int division(IN p_element first,
+             IN p_element second,
+             OUT p_element number,
+             OUT p_element quotient) {
 
     ZEROING(number);
     ZEROING(quotient);
 
     if (compare(first, second, NUM_SIZE, NUM_SIZE) == -1) {
         COPY(first, quotient);
-        return;
+        return SUCCESSFULLY;
     } else if (compare(second, &zero, NUM_SIZE, ZERO_SIZE) == 0) {
-        return;
+        return INVALID_INPUT_PARAMS;
     }
 
     COPY(first, quotient);
@@ -66,5 +67,5 @@ void division(IN p_element first,
 
     } while (compareResult == 1 || compareResult == 0);
 
-    return;
+    return SUCCESSFULLY;
 }

@@ -4,6 +4,7 @@
 #include "Div.h"
 #include "Mul.h"
 #include "Sub.h"
+#include "ResultCode.h"
 
 /************************************************************/
 /*  Начало блока static функций                             */
@@ -12,9 +13,9 @@
 /************************************************************/
 /*  Функция нахождения НОД двух чисел (a, b) рекурсивно     */
 /*                                                          */
-/*  void gcd(IN p_element a,                                */
-/*           IN p_element b,                                */
-/*           OUT p_element result);                         */
+/*  int gcd(IN p_element a,                                 */
+/*          IN p_element b,                                 */
+/*          OUT p_element result);                          */
 /*                                                          */
 /*  Входные параметры:                                      */
 /*                                                          */
@@ -28,9 +29,9 @@
 /*                                                          */
 /************************************************************/
 
-static void gcdR(IN p_element a,
-                 IN p_element b,
-                 OUT p_element result);
+static int gcdR(IN p_element a,
+                IN p_element b,
+                OUT p_element result);
 
 /************************************************************/
 /*  Функция рекурсивного выполнения расширенного алогритма  */
@@ -38,11 +39,11 @@ static void gcdR(IN p_element a,
 /*                                                          */
 /*  решение уравнения: a * x + b * y = (a, b)               */
 /*                                                          */
-/*  void gcdExtendedR(IN p_element a,                       */
-/*                    IN p_element b,                       */
-/*                    OUT p_element result,                 */
-/*                    OUT p_element x,                      */
-/*                    OUT p_element y);                     */
+/*  int gcdExtendedR(IN p_element a,                        */
+/*                   IN p_element b,                        */
+/*                   OUT p_element result,                  */
+/*                   OUT p_element x,                       */
+/*                   OUT p_element y);                      */
 /*                                                          */
 /*  Входные параметры:                                      */
 /*                                                          */
@@ -60,19 +61,19 @@ static void gcdR(IN p_element a,
 /*                                                          */
 /************************************************************/
 
-static void gcdExtendedR(IN p_element a,
-                         IN p_element b,
-                         OUT p_element result,
-                         OUT p_element x,
-                         OUT p_element y);
+static int gcdExtendedR(IN p_element a,
+                        IN p_element b,
+                        OUT p_element result,
+                        OUT p_element x,
+                        OUT p_element y);
 
 /************************************************************/
 /*  Конец блока static функций                              */
 /************************************************************/
 
-void gcd(IN p_element a,
-         IN p_element b,
-         OUT p_element result) {
+int gcd(IN p_element a,
+        IN p_element b,
+        OUT p_element result) {
 
     element _a[NUM_SIZE];
     element _b[NUM_SIZE];
@@ -85,14 +86,14 @@ void gcd(IN p_element a,
 
     compareAndSwap(_a, _b);
 
-    gcdR(_a, _b, result);
+    return gcdR(_a, _b, result);
 }
 
-void gcdExtended(IN p_element a,
-                 IN p_element b,
-                 OUT p_element result,
-                 OUT p_element x,
-                 OUT p_element y) {
+int gcdExtended(IN p_element a,
+                IN p_element b,
+                OUT p_element result,
+                OUT p_element x,
+                OUT p_element y) {
     element _a[NUM_SIZE];
     element _b[NUM_SIZE];
 
@@ -104,42 +105,53 @@ void gcdExtended(IN p_element a,
 
     BOOL swapResult = compareAndSwap(_a, _b);
 
-    gcdExtendedR(_a, _b, result, x, y);
+    int resultCode = gcdExtendedR(_a, _b, result, x, y);
+
+    if (result != SUCCESSFULLY) {
+        return resultCode;
+    }
 
     if (swapResult == True) {
         swap(x, y);
     }
+
+    return resultCode;
 }
 
 /************************************************************/
 /*  Начало блока static функций                             */
 /************************************************************/
 
-static void gcdR(IN p_element a,
-                 IN p_element b,
-                 OUT p_element result) {
+static int gcdR(IN p_element a,
+                IN p_element b,
+                OUT p_element result) {
 
     element r[NUM_SIZE];
     element q[NUM_SIZE];
 
     int i = 0;
+    int resultCode = SUCCESSFULLY;
 
-    division(a, b, r, q);
+    resultCode = division(a, b, r, q);
+
+    if (resultCode != SUCCESSFULLY) {
+        return resultCode;
+    }
 
     if (compare(q, &zero, NUM_SIZE, ZERO_SIZE) == 0) {
         ZEROING(result);
         COPY(b, result);
-        return;
+        return SUCCESSFULLY;
     }
 
-    gcdR(b, q, result);
+    return gcdR(b, q, result);
 }
 
-static void gcdExtendedR(IN p_element a,
-                         IN p_element b,
-                         OUT p_element result,
-                         OUT p_element x,
-                         OUT p_element y) {
+static int gcdExtendedR(IN p_element a,
+                        IN p_element b,
+                        OUT p_element result,
+                        OUT p_element x,
+                        OUT p_element y) {
 
     element r[NUM_SIZE];
     element q[NUM_SIZE];
@@ -149,7 +161,13 @@ static void gcdExtendedR(IN p_element a,
     memset(tmp, 0, NUM_SIZE * 2 * sizeof(element));
     ZEROING(newX);
 
-    division(a, b, r, q);
+    int resultCode = SUCCESSFULLY;
+
+    resultCode = division(a, b, r, q);
+
+    if (resultCode != SUCCESSFULLY) {
+        return resultCode;
+    }
 
     if (compare(q, &zero, NUM_SIZE, ZERO_SIZE) == 0) {
         ZEROING(result);
@@ -158,16 +176,20 @@ static void gcdExtendedR(IN p_element a,
         x[0] = 0;
         y[0] = 1;
         COPY(b, result);
-        return;
+        return SUCCESSFULLY;
     }
 
-    gcdExtendedR(b, q, result, x, y);
+    resultCode = gcdExtendedR(b, q, result, x, y);
+
+    if (resultCode != SUCCESSFULLY) {
+        return resultCode;
+    }
 
     COPY(y, newX);
     multiplication(y, r, tmp);
     subtraction(x, tmp, y);
     COPY(newX, x);
-    return;
+    return resultCode;
 }
 
 /************************************************************/
