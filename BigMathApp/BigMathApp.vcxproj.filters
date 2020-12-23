@@ -18,21 +18,21 @@
     <ClCompile Include="BigMathApp.c">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="TestBigMathLib.c">
+    <ClCompile Include="src\TestBigMathLib.c">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
-    <ClCompile Include="CheckBigMathLibResult.c">
+    <ClCompile Include="src\CheckBigMathLibResult.c">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="TestBigMathLib.h">
+    <ClInclude Include="inc\Messages.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="CheckBigMathLibResult.h">
+    <ClInclude Include="inc\TestBigMathLib.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Messages.h">
+    <ClInclude Include="inc\CheckBigMathLibResult.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

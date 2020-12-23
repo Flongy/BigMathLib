@@ -39,16 +39,23 @@ int _printFile(IN char* path,
     return 0;
 }
 
-
 void printConsoleLE(IN p_element numptr) {
-    for (int i = 0; i < NUM_SIZE; i++) {
+    printConsoleLE2(numptr, NUM_SIZE);
+}
+
+void printConsoleLE2(IN p_element numptr, unsigned int size) {
+    for (int i = 0; i < size; i++) {
         printf("%.8X ", numptr[i]);
     }
     printf("\n");
 }
 
 void printConsoleBE(IN p_element numptr) {
-    for (int i = NUM_SIZE - 1; i >= 0; i--) {
+    printConsoleBE2(numptr, NUM_SIZE);
+}
+
+void printConsoleBE2(IN p_element numptr, unsigned int size) {
+    for (int i = size - 1; i >= 0; i--) {
         printf("%.8X ", numptr[i]);
     }
     printf("\n");

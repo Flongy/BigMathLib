@@ -107,7 +107,7 @@ int gcdExtended(IN p_element a,
 
     int resultCode = gcdExtendedR(_a, _b, result, x, y);
 
-    if (result != SUCCESSFULLY) {
+    if (resultCode != SUCCESSFULLY) {
         return resultCode;
     }
 
@@ -126,25 +126,25 @@ static int gcdR(IN p_element a,
                 IN p_element b,
                 OUT p_element result) {
 
-    element r[NUM_SIZE];
     element q[NUM_SIZE];
+    element r[NUM_SIZE];
 
     int i = 0;
     int resultCode = SUCCESSFULLY;
 
-    resultCode = division(a, b, r, q);
+    resultCode = division(a, b, q, r);
 
     if (resultCode != SUCCESSFULLY) {
         return resultCode;
     }
 
-    if (compare(q, &zero, NUM_SIZE, ZERO_SIZE) == 0) {
+    if (compare(r, &zero, NUM_SIZE, ZERO_SIZE) == 0) {
         ZEROING(result);
         COPY(b, result);
         return SUCCESSFULLY;
     }
 
-    return gcdR(b, q, result);
+    return gcdR(b, r, result);
 }
 
 static int gcdExtendedR(IN p_element a,
@@ -153,8 +153,8 @@ static int gcdExtendedR(IN p_element a,
                         OUT p_element x,
                         OUT p_element y) {
 
-    element r[NUM_SIZE];
     element q[NUM_SIZE];
+    element r[NUM_SIZE];
     element tmp[NUM_SIZE * 2];
     element newX[NUM_SIZE];
 
@@ -163,13 +163,13 @@ static int gcdExtendedR(IN p_element a,
 
     int resultCode = SUCCESSFULLY;
 
-    resultCode = division(a, b, r, q);
+    resultCode = division(a, b, q, r);
 
     if (resultCode != SUCCESSFULLY) {
         return resultCode;
     }
 
-    if (compare(q, &zero, NUM_SIZE, ZERO_SIZE) == 0) {
+    if (compare(r, &zero, NUM_SIZE, ZERO_SIZE) == 0) {
         ZEROING(result);
         ZEROING(x);
         ZEROING(y);
@@ -179,14 +179,14 @@ static int gcdExtendedR(IN p_element a,
         return SUCCESSFULLY;
     }
 
-    resultCode = gcdExtendedR(b, q, result, x, y);
+    resultCode = gcdExtendedR(b, r, result, x, y);
 
     if (resultCode != SUCCESSFULLY) {
         return resultCode;
     }
 
     COPY(y, newX);
-    multiplication(y, r, tmp);
+    multiplication(y, q, tmp);
     subtraction(x, tmp, y);
     COPY(newX, x);
     return resultCode;

@@ -13,7 +13,7 @@
 #endif
 
 #define BYTE_LEN 8
-#define NUM_SIZE 2
+#define NUM_SIZE 8
 
 #define ZERO_SIZE 1
 static unsigned int zero = 0;
@@ -21,7 +21,9 @@ static unsigned int zero = 0;
 typedef unsigned int element;
 typedef element *p_element;
 
-typedef unsigned char BOOL;
+#ifndef BOOL
+#define BOOL unsigned char
+#endif
 
 #ifdef BIGMATHLIB_EXPORTS
 #define BIGMATHLIB_API __declspec(dllexport)

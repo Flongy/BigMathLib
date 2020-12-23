@@ -16,4 +16,6 @@ void test() {
     testGcd();
     testGcdExtended();
     testInverse();
+    testPowerMod();
+    testDiffieHellman();
 }

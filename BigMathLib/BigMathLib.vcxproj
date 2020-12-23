@@ -94,7 +94,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>..\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <BrowseInformation>true</BrowseInformation>
       <ExpandAttributedSource>true</ExpandAttributedSource>
@@ -105,7 +105,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <ImportLibrary>..\lib\$(TargetName).lib</ImportLibrary>
+      <ImportLibrary>$(SolutionDir)BigMathLib\lib\$(TargetName).lib</ImportLibrary>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -162,34 +162,40 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\inc\Div.h" />
-    <ClInclude Include="..\inc\Gcd.h" />
-    <ClInclude Include="..\inc\BigMathLib.h" />
-    <ClInclude Include="..\inc\Mul.h" />
-    <ClInclude Include="..\inc\BNumber.h" />
-    <ClInclude Include="..\inc\NumIO.h" />
-    <ClInclude Include="..\inc\ResultCode.h" />
-    <ClInclude Include="..\inc\Shift.h" />
-    <ClInclude Include="..\inc\Sqrt.h" />
-    <ClInclude Include="..\inc\Sub.h" />
-    <ClInclude Include="..\inc\Add.h" />
-    <ClInclude Include="..\inc\Compare.h" />
-    <ClInclude Include="..\inc\Inverse.h" />
-    <ClInclude Include="..\inc\IOInterface.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="inc\Add.h" />
+    <ClInclude Include="inc\BigMathLib.h" />
+    <ClInclude Include="inc\BNumber.h" />
+    <ClInclude Include="inc\Compare.h" />
+    <ClInclude Include="inc\DiffieHellman.h" />
+    <ClInclude Include="inc\Div.h" />
+    <ClInclude Include="inc\Gcd.h" />
+    <ClInclude Include="inc\Inverse.h" />
+    <ClInclude Include="inc\IOInterface.h" />
+    <ClInclude Include="inc\Mod.h" />
+    <ClInclude Include="inc\Mul.h" />
+    <ClInclude Include="inc\NumIO.h" />
+    <ClInclude Include="inc\Rand.h" />
+    <ClInclude Include="inc\ResultCode.h" />
+    <ClInclude Include="inc\Shift.h" />
+    <ClInclude Include="inc\Sqrt.h" />
+    <ClInclude Include="inc\Sub.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\Div.c" />
-    <ClCompile Include="..\src\Gcd.c" />
-    <ClCompile Include="..\src\Mul.c" />
-    <ClCompile Include="..\src\NumIO.c" />
-    <ClCompile Include="..\src\Shift.c" />
-    <ClCompile Include="..\src\Sqrt.c" />
-    <ClCompile Include="..\src\Sub.c" />
-    <ClCompile Include="..\src\Add.c" />
-    <ClCompile Include="..\src\Compare.c" />
-    <ClCompile Include="..\src\Inverse.c" />
-    <ClCompile Include="..\src\IOInterface.c" />
+    <ClCompile Include="src\Add.c" />
+    <ClCompile Include="src\Compare.c" />
+    <ClCompile Include="src\DiffieHellman.c" />
+    <ClCompile Include="src\Div.c" />
+    <ClCompile Include="src\Gcd.c" />
+    <ClCompile Include="src\Inverse.c" />
+    <ClCompile Include="src\IOInterface.c" />
+    <ClCompile Include="src\Mod.c" />
+    <ClCompile Include="src\Mul.c" />
+    <ClCompile Include="src\NumIO.c" />
+    <ClCompile Include="src\Rand.c" />
+    <ClCompile Include="src\Shift.c" />
+    <ClCompile Include="src\Sqrt.c" />
+    <ClCompile Include="src\Sub.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
