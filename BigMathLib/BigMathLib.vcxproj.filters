@@ -18,81 +18,99 @@
     <ClInclude Include="framework.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\inc\BNumber.h">
+    <ClInclude Include="inc\Compare.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\inc\Compare.h">
+    <ClInclude Include="inc\Div.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\inc\IOInterface.h">
+    <ClInclude Include="inc\Gcd.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\inc\BigMathLib.h">
+    <ClInclude Include="inc\Inverse.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\inc\Inverse.h">
+    <ClInclude Include="inc\IOInterface.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\inc\Div.h">
+    <ClInclude Include="inc\Mul.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\inc\Gcd.h">
+    <ClInclude Include="inc\NumIO.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\inc\Mul.h">
+    <ClInclude Include="inc\ResultCode.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\inc\NumIO.h">
+    <ClInclude Include="inc\Shift.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\inc\Shift.h">
+    <ClInclude Include="inc\Sqrt.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\inc\Sqrt.h">
+    <ClInclude Include="inc\Sub.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\inc\Sub.h">
+    <ClInclude Include="inc\Add.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\inc\Add.h">
+    <ClInclude Include="inc\BigMathLib.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\inc\ResultCode.h">
+    <ClInclude Include="inc\BNumber.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\DiffieHellman.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Mod.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\Rand.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\IOInterface.c">
+    <ClCompile Include="src\Add.c">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Compare.c">
+    <ClCompile Include="src\Compare.c">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Inverse.c">
+    <ClCompile Include="src\Div.c">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Div.c">
+    <ClCompile Include="src\Gcd.c">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Gcd.c">
+    <ClCompile Include="src\Inverse.c">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Mul.c">
+    <ClCompile Include="src\IOInterface.c">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\NumIO.c">
+    <ClCompile Include="src\Mul.c">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Shift.c">
+    <ClCompile Include="src\NumIO.c">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Sqrt.c">
+    <ClCompile Include="src\Shift.c">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Sub.c">
+    <ClCompile Include="src\Sqrt.c">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Add.c">
+    <ClCompile Include="src\Sub.c">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DiffieHellman.c">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mod.c">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rand.c">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
   </ItemGroup>

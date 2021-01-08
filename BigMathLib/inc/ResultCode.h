@@ -6,6 +6,6 @@ typedef enum {
     INVALID_INPUT_PARAMS = -1,
     OPERATION_EXCEPTION = -2,
     RUNTIME_ERROR = -3
-} resultCode;
+} ResultCode;
 
 #endif

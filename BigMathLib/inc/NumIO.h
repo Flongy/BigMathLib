@@ -75,6 +75,22 @@ LIB(int) _printFile(IN char* path,
 
 LIB(void) printConsoleLE(IN p_element numptr);
 
+/************************************************************************************/
+/*  Функция для вывода числа в консоль в формате Little Endian                      */
+/*                                                                                  */
+/*  void printConsoleLE2(IN p_element numptr,                                       */
+/*                       IN unsigned int size);                                     */
+/*                                                                                  */
+/*  Входные параметры:                                                              */
+/*                                                                                  */
+/*  p_element numptr    - число, которое нужно вывести в консоль                    */
+/*  unsigned int size   - длина числа                                               */
+/*                                                                                  */
+/************************************************************************************/
+
+LIB(void) printConsoleLE2(IN p_element numptr, unsigned int size);
+
+
 
 /************************************************************************************/
 /*  Функция для вывода числа в консоль в формате Big Endian                         */
@@ -88,5 +104,20 @@ LIB(void) printConsoleLE(IN p_element numptr);
 /************************************************************************************/
 
 LIB(void) printConsoleBE(IN p_element numptr);
+
+/************************************************************************************/
+/*  Функция для вывода числа в консоль в формате Big Endian                         */
+/*                                                                                  */
+/*  void printConsoleBE2(IN p_element numptr,                                       */
+/*                       IN unsigned int size);                                     */
+/*                                                                                  */
+/*  Входные параметры:                                                              */
+/*                                                                                  */
+/*  p_element numptr    - число, которое нужно вывести в консоль                    */
+/*  unsigned int size   - длина числа                                               */
+/*                                                                                  */
+/************************************************************************************/
+
+LIB(void) printConsoleBE2(IN p_element numptr, unsigned int size);
 
 #endif

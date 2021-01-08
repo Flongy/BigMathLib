@@ -14,6 +14,10 @@ BOOL checkInverseResult(IN p_element a,
                         IN p_element m,
                         IN p_element result);
 
+BOOL checkDiffieHellmanResult(IN p_testDiffieHellmanStruct resultStruct1,
+                              IN p_testDiffieHellmanStruct resultStruct2);
+
+
 
 void proccessCheckResult(IN BOOL checkResult);
 

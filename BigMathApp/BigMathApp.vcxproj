@@ -88,13 +88,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\inc%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)BigMathLib\inc;$(ProjectDir)inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/source-charset:utf-8 /execution-charset:utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)BigMathLib\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>BigMathLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -144,13 +144,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BigMathApp.c" />
-    <ClCompile Include="CheckBigMathLibResult.c" />
-    <ClCompile Include="TestBigMathLib.c" />
+    <ClCompile Include="src\CheckBigMathLibResult.c" />
+    <ClCompile Include="src\TestBigMathLib.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CheckBigMathLibResult.h" />
-    <ClInclude Include="Messages.h" />
-    <ClInclude Include="TestBigMathLib.h" />
+    <ClInclude Include="inc\CheckBigMathLibResult.h" />
+    <ClInclude Include="inc\Messages.h" />
+    <ClInclude Include="inc\TestBigMathLib.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -13,5 +13,9 @@
 #include "IOInterface.h"
 #include "Gcd.h"
 #include "Inverse.h"
+#include "DiffieHellman.h"
+#include "Mod.h"
+#include "ResultCode.h"
+#include "Rand.h"
 
 #endif

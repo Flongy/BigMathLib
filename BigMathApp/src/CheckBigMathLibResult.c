@@ -1,4 +1,5 @@
 #include "BigMathLib.h"
+#include "TestBigMathLib.h"
 #include "CheckBigMathLibResult.h"
 #include "Messages.h"
 
@@ -54,4 +55,15 @@ void proccessCheckResult(IN BOOL checkResult) {
     } else {
         printf(CHECK_NOT_PASSED);
     }
+}
+
+
+BOOL checkDiffieHellmanResult(IN p_testDiffieHellmanStruct resultStruct1,
+                              IN p_testDiffieHellmanStruct resultStruct2) {
+    if (resultStruct1->code == SUCCESSFULLY && resultStruct2->code == SUCCESSFULLY) {
+        if (compare(resultStruct1->resultNumber, resultStruct2->resultNumber, NUM_SIZE, NUM_SIZE) == 0) {
+            return True;
+        }
+    }
+    return False;
 }
