@@ -172,6 +172,7 @@
     <ClInclude Include="inc\Gcd.h" />
     <ClInclude Include="inc\Inverse.h" />
     <ClInclude Include="inc\IOInterface.h" />
+    <ClInclude Include="inc\LRS.h" />
     <ClInclude Include="inc\Mod.h" />
     <ClInclude Include="inc\Mul.h" />
     <ClInclude Include="inc\NumIO.h" />
@@ -189,6 +190,7 @@
     <ClCompile Include="src\Gcd.c" />
     <ClCompile Include="src\Inverse.c" />
     <ClCompile Include="src\IOInterface.c" />
+    <ClCompile Include="src\LRS.c" />
     <ClCompile Include="src\Mod.c" />
     <ClCompile Include="src\Mul.c" />
     <ClCompile Include="src\NumIO.c" />

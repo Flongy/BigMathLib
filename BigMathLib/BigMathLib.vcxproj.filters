@@ -69,6 +69,9 @@
     <ClInclude Include="inc\Rand.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="inc\LRS.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Add.c">
@@ -111,6 +114,9 @@
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
     <ClCompile Include="src\Rand.c">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LRS.c">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
   </ItemGroup>

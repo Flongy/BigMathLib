@@ -279,3 +279,31 @@ static void convertNumber(IN OUT p_element number) {                            
     }
     increment(number);
 }
+
+static void fillLrsInitState(unsigned short* a, unsigned int size) {
+    int i = 0;
+    for (i = 0; i < size; i++) {
+        a[i] = 22 + i;
+    }
+}
+
+static void printLrs(unsigned short* a, unsigned int size) {
+    int i = 0;
+    for (i = size - 1; i >= 0; i--) {
+        printf("%d ", a[i]);
+    }
+    printf("\n");
+}
+
+void testLrs() {
+    unsigned int F = 22, i = 0, x = 0;
+    unsigned short a[32] = { 0 };
+    
+    fillLrsInitState(a, 32);
+    getLrs(a, F, 0x8F57, 32, 63);
+
+    for (i = 64; i < 96; i++) {
+        getLrs(a, F, 0x63, 32, 1);
+        printLrs(a, 32);
+    }
+}

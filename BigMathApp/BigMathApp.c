@@ -18,4 +18,5 @@ void test() {
     testInverse();
     testPowerMod();
     testDiffieHellman();
+    testLrs();
 }

@@ -17,5 +17,6 @@
 #include "Mod.h"
 #include "ResultCode.h"
 #include "Rand.h"
+#include "LRS.h"
 
 #endif
