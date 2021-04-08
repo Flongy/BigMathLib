@@ -71,3 +71,26 @@ void addMod(IN p_element a,
     }
 }
 
+
+void subMod(IN p_element a,
+            IN p_element b,
+            IN p_element mod,
+            OUT p_element result) {
+    element result_temp[NUM_SIZE];
+
+    subtraction(a, b, result);
+    if (compare(a, b, NUM_SIZE, NUM_SIZE) == -1) {
+        addition(result, mod, result_temp);
+        COPY(result_temp, result);
+        while (compare(result, mod, NUM_SIZE, NUM_SIZE) < 0) {
+            addition(result, mod, result_temp);
+            COPY(result_temp, result);
+        }
+    }
+
+    while (compare(result, mod, NUM_SIZE, NUM_SIZE) >= 0) {
+        subtraction(result, mod, result_temp);
+        COPY(result_temp, result);
+    }
+}
+

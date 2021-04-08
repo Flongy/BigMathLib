@@ -168,6 +168,57 @@ void testAddMod() {
         printf("INCORRECT\n");
 }
 
+void testSubMod() {
+    printf(TEST_SUB_MOD_MESSAGE);
+
+    element a[NUM_SIZE];
+    ZEROING(a);
+    a[0] = 0x228;
+
+    element b[NUM_SIZE];
+    ZEROING(b);
+    b[0] = 0x1337;
+
+    element mod[NUM_SIZE];
+    ZEROING(mod);
+    mod[0] = 0x69;
+
+    element result[NUM_SIZE];
+    ZEROING(result);
+
+    element expected[NUM_SIZE];
+    ZEROING(expected);
+
+    // 552 - 4919 mod 105 = 43
+    expected[0] = 0x2B;
+    printf("num a: ");      printConsoleBE(a);
+    printf("num b: ");      printConsoleBE(b);
+    printf("num mod: ");    printConsoleBE(mod);
+
+    subMod(a, b, mod, result);
+
+    printf("a - b: ");     printConsoleBE(result);
+    if (compare(result, expected, NUM_SIZE, NUM_SIZE) == 0)
+        printf("CORRECT\n");
+    else
+        printf("INCORRECT\n");
+
+    // 4919 - 552 mod 105 = 62
+    expected[0] = 0x3E;
+
+    printf("num b: ");      printConsoleBE(b);
+    printf("num a: ");      printConsoleBE(a);
+    printf("num mod: ");    printConsoleBE(mod);
+
+    subMod(b, a, mod, result);
+
+    printf("b - a: ");     printConsoleBE(result);
+    if (compare(result, expected, NUM_SIZE, NUM_SIZE) == 0)
+        printf("CORRECT\n");
+    else
+        printf("INCORRECT\n");
+}
+
 #define THREAD_COUNT 2                                                                  //количество потоков для имитации передачи данных по сети
 
 static volatile unsigned int threadCounter = 0;                                         //счетчик потоков
