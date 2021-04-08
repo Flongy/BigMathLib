@@ -40,6 +40,7 @@ typedef element *p_element;
 #define LIB(type) REF BIGMATHLIB_API type
 
 #define ZEROING(number) memset(number, 0, NUM_SIZE * sizeof(element))
+#define ZEROING2(number, size) memset(number, 0, size * sizeof(element))
 #define COPY(from, to) memcpy(to, from, NUM_SIZE * sizeof(element))
 
 #endif BNUMBER_H
