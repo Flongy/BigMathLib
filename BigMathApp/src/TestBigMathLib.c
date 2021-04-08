@@ -133,6 +133,41 @@ void testPowerMod() {
     printConsoleBE(result);
 }
 
+void testAddMod() {
+    printf(TEST_ADD_MOD_MESSAGE);
+
+    element a[NUM_SIZE];
+    ZEROING(a);
+    a[0] = 0x228;
+
+    element b[NUM_SIZE];
+    ZEROING(b);
+    b[0] = 0x1337;
+
+    element mod[NUM_SIZE];
+    ZEROING(mod);
+    mod[0] = 0x69;
+
+    element result[NUM_SIZE];
+    ZEROING(result);
+
+    element expected[NUM_SIZE];
+    ZEROING(expected);
+    expected[0] = 0xB;
+
+    printf("num a: ");      printConsoleBE(a);
+    printf("num b: ");      printConsoleBE(b);
+    printf("num mod: ");    printConsoleBE(mod);
+
+    addMod(a, b, mod, result);
+
+    printf("a + b: ");     printConsoleBE(result);
+    if (compare(result, expected, NUM_SIZE, NUM_SIZE) == 0)
+        printf("CORRECT\n");
+    else
+        printf("INCORRECT\n");
+}
+
 #define THREAD_COUNT 2                                                                  //количество потоков для имитации передачи данных по сети
 
 static volatile unsigned int threadCounter = 0;                                         //счетчик потоков

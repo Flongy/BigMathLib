@@ -12,6 +12,7 @@ void testGcd();
 void testGcdExtended();
 void testInverse();
 void testPowerMod();
+void testAddMod();
 void testDiffieHellman();
 
 #endif
